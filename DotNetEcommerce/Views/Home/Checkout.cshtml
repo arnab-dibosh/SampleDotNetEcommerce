@@ -3,228 +3,263 @@
     decimal total = 0;
 }
 
-    <div class="row">
-        <div class="col-lg-6 col-12">
-            <form action="#">
-                <div class="checkbox-form">
-                    <h3>Billing Details</h3>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="country-select clearfix">
-                                <label>Country <span class="required">*</span></label>
-                                <select class="nice-select wide">
-                                    <option data-display="Bangladesh">Bangladesh</option>
-                                    <option value="uk">London</option>
-                                    <option value="rou">Romania</option>
-                                    <option value="fr">French</option>
-                                    <option value="de">Germany</option>
-                                    <option value="aus">Australia</option>
-                                </select>
-                            </div>
+<div class="row">
+    <div class="col-lg-6 col-12">
+        <form action="#">
+            <div class="checkbox-form">
+                <h3>Billing Details</h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="country-select clearfix">
+                            <label>Country <span class="required">*</span></label>
+                            <select class="nice-select wide">
+                                <option data-display="Bangladesh">Bangladesh</option>
+                                <option value="uk">London</option>
+                                <option value="rou">Romania</option>
+                                <option value="fr">French</option>
+                                <option value="de">Germany</option>
+                                <option value="aus">Australia</option>
+                            </select>
                         </div>
-                        <div class="col-md-6">
-                            <div class="checkout-form-list">
-                                <label>First Name <span class="required">*</span></label>
-                                <input placeholder="" type="text" value="Mr. Sample">
-                            </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="checkout-form-list">
+                            <label>First Name <span class="required">*</span></label>
+                            <input placeholder="" type="text" value="Mr. Sample">
                         </div>
-                        <div class="col-md-6">
-                            <div class="checkout-form-list">
-                                <label>Last Name <span class="required">*</span></label>
-                                <input placeholder="" type="text" value="User">
-                            </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="checkout-form-list">
+                            <label>Last Name <span class="required">*</span></label>
+                            <input placeholder="" type="text" value="User">
                         </div>
-                        <div class="col-md-12">
-                            <div class="checkout-form-list">
-                                <label>Address <span class="required">*</span></label>
-                                <input placeholder="Street address" type="text" value="Mirpur 10">
-                            </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="checkout-form-list">
+                            <label>Address <span class="required">*</span></label>
+                            <input placeholder="Street address" type="text" value="Mirpur 10">
                         </div>
-                        <div class="col-md-12">
-                            <div class="checkout-form-list">
-                                <input placeholder="Apartment, suite, unit etc. (optional)" type="text" value="House: 11, Road No: 10">
-                            </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="checkout-form-list">
+                            <input placeholder="Apartment, suite, unit etc. (optional)" type="text" value="House: 11, Road No: 10">
                         </div>
-                        <div class="col-md-12">
-                            <div class="checkout-form-list">
-                                <label>Town / City <span class="required">*</span></label>
-                                <input type="text" value="Dhaka">
-                            </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="checkout-form-list">
+                            <label>Town / City <span class="required">*</span></label>
+                            <input type="text" value="Dhaka">
                         </div>
-                        <div class="col-md-6">
-                            <div class="checkout-form-list">
-                                <label>State / County <span class="required">*</span></label>
-                                <input placeholder="" type="text" value="Dhaka">
-                            </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="checkout-form-list">
+                            <label>State / County <span class="required">*</span></label>
+                            <input placeholder="" type="text" value="Dhaka">
                         </div>
-                        <div class="col-md-6">
-                            <div class="checkout-form-list">
-                                <label>Postcode / Zip <span class="required">*</span></label>
-                                <input placeholder="" type="text" value="01711-111333">
-                            </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="checkout-form-list">
+                            <label>Postcode / Zip <span class="required">*</span></label>
+                            <input placeholder="" type="text" value="01711-111333">
                         </div>
                     </div>
                 </div>
-            </form>
-        </div>
-        <div class="col-lg-6 col-12">
-            <div class="your-order">
-                <h3>Your order</h3>
-                <div class="your-order-table table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th class="cart-product-name">Product</th>
-                                <th class="cart-product-total">Amount</th>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-6 col-12">
+        <div class="your-order">
+            <h3>Your order</h3>
+            <div class="your-order-table table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="cart-product-name">Product</th>
+                            <th class="cart-product-total">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Product product in Model) {
+                            <tr class="cart_item">
+                                <td class="cart-product-name"> @product.Name<strong class="product-quantity"></strong></td>
+                                <td class="cart-product-total"><span class="amount">Tk @product.Price</span></td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (Product product in Model) {
-                                <tr class="cart_item">
-                                    <td class="cart-product-name"> @product.Name<strong class="product-quantity"></strong></td>
-                                    <td class="cart-product-total"><span class="amount">Tk @product.Price</span></td>
-                                </tr>
-                                total += product.Price;
-                            }
+                            total += product.Price;
+                        }
 
-                        </tbody>
-                        <tfoot>
-                            @*<tr class="cart-subtotal">
+                    </tbody>
+                    <tfoot>
+                        @*<tr class="cart-subtotal">
                                 <th>Cart Subtotal</th>
                                 <td><span class="amount">Tk 11800.00</span></td>
                             </tr>*@
-                            <tr class="order-total">
-                                <th>Total Amount</th>
-                                <td><strong><span id="orderAmount" class="amount">Tk @total</span></strong></td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-                <div class="payment-method">
-                    <div class="payment-accordion">
-                        <div id="accordion">
-                            <div class="card">
-                                <div class="card-header" id="#payment-1">
-                                    <h5 class="panel-title">
-                                        <a class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Pay with DBBL
-                                            <img style="height:30px" src="~/images/icon/dbblmain.jpg">
-                                            <img style="height:30px" src="/images/payment/2.png">
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p></p>
-                                    </div>
-                                </div>
+                        <tr class="order-total">
+                            <th>Total Amount</th>
+                            <td><strong><span id="orderAmount" class="amount">Tk @total</span></strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="payment-method">
+                <div class="payment-accordion">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="#payment-1">
+                                <h5 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Pay with DBBL
+                                        <img style="height:30px" src="~/images/icon/dbblmain.jpg">
+                                        <img style="height:30px" src="/images/payment/2.png">
+                                    </a>
+                                </h5>
                             </div>
-                            <br />
-                            <div class="card">
-                                <div class="card-header" id="#payment-1">
-                                    <h5 class="panel-title">
-                                        <a class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Pay with Bkash
-                                            <img style="height:30px" src="~/images/icon/bkashmain.jpg">
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-                            <div class="card">
-                                <div class="card-header" id="#payment-1">
-                                    <h5 class="panel-title">
-                                        <a class="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Pay with IDTP
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p>Please Enter your virtual Id to get a IDTP RTP payment Request.</p>
-                                        <input id="vid" placeholder="Enter VID" style="background:white" type="text" />
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-                            <div class="card">
-                                <div class="card-header" id="#payment-3">
-                                    <h5 class="panel-title">
-                                        <a class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Pay with SSLCOMMERZ
-                                            <img style="height:30px" src="~/images/icon/sslmain.jpg">
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <p></p>
-                                    </div>
+                            <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="order-button-payment">
-                            <input id="placeOrder" value="Place order" type="submit">
+                        <br />
+                        <div class="card">
+                            <div class="card-header" id="#payment-1">
+                                <h5 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Pay with Bkash
+                                        <img style="height:30px" src="~/images/icon/bkashmain.jpg">
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p></p>
+                                </div>
+                            </div>
                         </div>
+                        <br />
+                        <div class="card">
+                            <div class="card-header" id="#payment-1">
+                                <h5 class="panel-title">
+                                    <a class="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Pay with IDTP
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>Please Enter your virtual Id to get a IDTP RTP payment Request.</p>
+                                    <input id="vid" placeholder="Enter VID" style="background:white" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="card">
+                            <div class="card-header" id="#payment-3">
+                                <h5 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Pay with SSLCOMMERZ
+                                        <img style="height:30px" src="~/images/icon/sslmain.jpg">
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-button-payment">
+                        <input id="placeOrder" value="Place order" type="submit">
                     </div>
                 </div>
             </div>
         </div>
-        <div style="padding-left:5000px">
-            <div id="dialog" title="Order Submit">
-                <p style="color:black;font-size:17px" id="modalText">Please Accept RTP request from IDTP for <strong>Invoice No: #987654, Amount: Tk @total</strong> within 5 Mins.</p>
-                <img style="height:60px;padding-left:225px" id="loadingImg" src="~/images/loading.gif" alt="Processing" />
-            </div>
+    </div>
+    <div style="padding-left:5000px">
+        <div id="dialog" title="Order Submit">
+            <p style="color:black;font-size:17px" id="modalText">Please Accept RTP request from IDTP for <strong>Invoice No: #987654, Amount: Tk @total</strong> within 5 Mins.</p>
+            <img style="height:60px;padding-left:225px" id="loadingImg" src="~/images/loading.gif" alt="Processing" />
         </div>
     </div>
+
+    <div style="padding-left:5000px">
+        <div id="errordialog" title="Error!">
+            <p style="color:black;font-size:17px" >Please Enter a valid Virtual Id</p>
+        </div>
+    </div>
+</div>
 
     <script type="text/javascript">
 
         $(document).ready(function () {
 
+            
+
             $("#placeOrder").click(function () {
 
-                $("#dialog").dialog({
-                    maxWidth: 600,
-                    maxHeight: 500,
-                    width: 600,
-                    height: 300,
-                    modal: true,
-                    buttons: {
-                        Ok: function () {
-                            $(this).dialog("close");
-                        }
-                    }
-                });
-
-                var data = {};
-                var totalAmount = $('#orderAmount').text().trim();
                 var vid = $('#vid').val().trim();
-                data["Amount"] = totalAmount;
-                data["VirtualId"] = vid;
 
-                $.ajax({
-                    url: '/Home/SubmitOrder',
-                    type: "POST",
-                    dataType: 'JSON',
-                    contentType: "application/json",
-                    data: JSON.stringify(data),
-                    success: function (data) {
-                        $('#modalText').html('RTP Accepted for <strong >Invoice No: #987654</strong>. Your Order has been confirmed successfully and the products are ready for delivery. ');
-                        $('#loadingImg').hide();
-                    },
-                    error: function (data) {
+                if (vid) {
 
-                        var errorMsg = data.responseJSON['errorMessage'];
-                        alert(errorMsg);
+                    if (!vid.includes("idtp")) {
+                        $("#errordialog").dialog({
+                            buttons: {
+                                Ok: function () {
+                                    $(this).dialog("close");
+                                }
+                            }
+                        });
+                        return;
                     }
-                });
 
+                    $("#dialog").dialog({
+                        maxWidth: 600,
+                        maxHeight: 500,
+                        width: 600,
+                        height: 300,
+                        modal: true,
+                        buttons: {
+                            Ok: function () {
+                                $(this).dialog("close");
+                            }
+                        }
+                    });
+
+                    var data = {};
+                    var totalAmount = $('#orderAmount').text().trim();
+
+                    data["Amount"] = totalAmount;
+                    data["VirtualId"] = vid;
+
+                    $.ajax({
+                        url: '/Home/SubmitOrder',
+                        type: "POST",
+                        dataType: 'JSON',
+                        contentType: "application/json",
+                        data: JSON.stringify(data),
+                        success: function (data) {
+                            $('#modalText').html('RTP Accepted for <strong >Invoice No: #987654</strong>. Your Order has been confirmed successfully and the products are ready for delivery. ');
+                            $('#loadingImg').hide();
+                        },
+                        error: function (data) {
+
+                            var errorMsg = data.responseJSON['errorMessage'];
+                            alert(errorMsg);
+                        }
+                    });
+
+                }
+                else {
+                    $("#errordialog").dialog({
+                        buttons: {
+                            Ok: function () {
+                                $(this).dialog("close");
+                            }
+                        }
+                    });
+                    return;
+                }
+               
             });
 
         });

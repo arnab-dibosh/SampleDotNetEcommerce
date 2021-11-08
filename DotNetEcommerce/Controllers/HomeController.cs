@@ -21,6 +21,7 @@ namespace DotNetEcommerce.Controllers
         }
 
         public IActionResult Index() {
+            HttpContext.Session.SetString(Constants.ItemList, string.Empty);
             return View();
         }
 
