@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Shop Four Column || limupa - Digital Products Store eCommerce Bootstrap 4 Template</title>
+    <title>E-Commerce</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -25,7 +25,7 @@
     <!-- Animate CSS -->
     <link rel="stylesheet" href="~/css/animate.css">
     <!-- Jquery-ui CSS -->
-    <link rel="stylesheet" href="~/css/jquery-ui.min.css">
+    <!--<link rel="stylesheet" href="~/css/jquery-ui.min.css">-->
     <!-- Venobox CSS -->
     <link rel="stylesheet" href="~/css/venobox.css">
     <!-- Nice Select CSS -->
@@ -42,6 +42,17 @@
     <link rel="stylesheet" href="~/css/responsive.css">
     <!-- Modernizr js -->
     <script src="~/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- jQuery-V1.12.4 -->
+    <script src="~/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- Magnific popup js -->
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+
 </head>
 <body>
     <!--[if lt IE 8]>
@@ -59,7 +70,7 @@
                         <div class="col-lg-3 col-md-4">
                             <div class="header-top-left">
                                 <ul class="phone-wrap">
-                                    <li><span>Telephone Enquiry:</span><a href="#">(+123) 123 321 345</a></li>
+                                    <li><span>Telephone Enquiry:</span><a href="#">01711-111222</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -74,7 +85,7 @@
                                         <div class="setting ht-setting">
                                             <ul class="ht-setting-list">
                                                 <li><a href="login-register.html">My Account</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
+                                                <li><a href="Home/Checkout">Checkout</a></li>
                                                 <li><a href="login-register.html">Sign In</a></li>
                                             </ul>
                                         </div>
@@ -83,11 +94,10 @@
                                     <!-- Begin Currency Area -->
                                     <li>
                                         <span class="currency-selector-wrapper">Currency :</span>
-                                        <div class="ht-currency-trigger"><span>USD $</span></div>
+                                        <div class="ht-currency-trigger"><span>Tk</span></div>
                                         <div class="currency ht-currency">
                                             <ul class="ht-setting-list">
-                                                <li><a href="#">EUR €</a></li>
-                                                <li class="active"><a href="#">USD $</a></li>
+                                                <li class="active"><a href="#">Tk</a></li>
                                             </ul>
                                         </div>
                                     </li>
@@ -211,58 +221,31 @@
                                     <!-- Begin Header Middle Wishlist Area -->
                                     <li class="hm-wishlist">
                                         <a href="wishlist.html">
-                                            <span class="cart-item-count wishlist-item-count">0</span>
+                                            @*<span class="cart-item-count wishlist-item-count">0</span>*@
                                             <i class="fa fa-heart-o"></i>
                                         </a>
                                     </li>
                                     <!-- Header Middle Wishlist Area End Here -->
                                     <!-- Begin Header Mini Cart Area -->
                                     <li class="hm-minicart">
+
                                         <div class="hm-minicart-trigger">
                                             <span class="item-icon"></span>
                                             <span class="item-text">
-                                                £80.00
-                                                <span class="cart-item-count">2</span>
+                                                Cart
                                             </span>
                                         </div>
                                         <span></span>
                                         <div class="minicart">
-                                            <ul class="minicart-product-list">
-                                                <li>
-                                                    <a href="single-product.html" class="minicart-product-image">
-                                                        <img src="~/images/product/small-size/5.jpg" alt="cart products">
-                                                    </a>
-                                                    <div class="minicart-product-details">
-                                                        <h6><a href="single-product.html">Aenean eu tristique</a></h6>
-                                                        <span>£40 x 1</span>
-                                                    </div>
-                                                    <button class="close" title="Remove">
-                                                        <i class="fa fa-close"></i>
-                                                    </button>
-                                                </li>
-                                                <li>
-                                                    <a href="single-product.html" class="minicart-product-image">
-                                                        <img src="~/images/product/small-size/6.jpg" alt="cart products">
-                                                    </a>
-                                                    <div class="minicart-product-details">
-                                                        <h6><a href="single-product.html">Aenean eu tristique</a></h6>
-                                                        <span>£40 x 1</span>
-                                                    </div>
-                                                    <button class="close" title="Remove">
-                                                        <i class="fa fa-close"></i>
-                                                    </button>
-                                                </li>
-                                            </ul>
-                                            <p class="minicart-total">SUBTOTAL: <span>£80.00</span></p>
+                                            <p class="minicart-total">SUBTOTAL: <span id="minicartTotal">Tk 00</span></p>
                                             <div class="minicart-button">
-                                                <a href="shopping-cart.html" class="li-button li-button-fullwidth li-button-dark">
-                                                    <span>View Full Cart</span>
-                                                </a>
-                                                <a href="checkout.html" class="li-button li-button-fullwidth">
+
+                                                <a href="Home/Checkout" class="li-button li-button-fullwidth">
                                                     <span>Checkout</span>
                                                 </a>
                                             </div>
                                         </div>
+
                                     </li>
                                     <!-- Header Mini Cart Area End Here -->
                                 </ul>
@@ -439,16 +422,16 @@
         </header>
         <!-- Header Area End Here -->
         <!-- Begin Li's Breadcrumb Area -->
-        <div class="breadcrumb-area">
-            <div class="container">
-                <div class="breadcrumb-content">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active">Shop 4 Column</li>
-                    </ul>
+        @*<div class="breadcrumb-area">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active">Shop 4 Column</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </div>*@
         <!-- Li's Breadcrumb Area End Here -->
         <!-- Begin Li's Content Wraper Area -->
         <div class="content-wraper pt-60 pb-60">
@@ -456,45 +439,13 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- Begin Li's Banner Area -->
-                        <div class="single-banner shop-page-banner">
-                            <a href="#">
-                                <img src="~/images/bg-banner/2.jpg" alt="Li's Static Banner">
-                            </a>
-                        </div>
+                        @*<div class="single-banner shop-page-banner">
+                                <a href="#">
+                                    <img src="~/images/bg-banner/2.jpg" alt="Li's Static Banner">
+                                </a>
+                            </div>*@
                         <!-- Li's Banner Area End Here -->
-                        <!-- shop-top-bar start -->
-                        <div class="shop-top-bar mt-30">
-                            <div class="shop-bar-inner">
-                                <div class="product-view-mode">
-                                    <!-- shop-item-filter-list start -->
-                                    <ul class="nav shop-item-filter-list" role="tablist">
-                                        <li class="active" role="presentation"><a aria-selected="true" class="active show" data-toggle="tab" role="tab" aria-controls="grid-view" href="#grid-view"><i class="fa fa-th"></i></a></li>
-                                        <li role="presentation"><a data-toggle="tab" role="tab" aria-controls="list-view" href="#list-view"><i class="fa fa-th-list"></i></a></li>
-                                    </ul>
-                                    <!-- shop-item-filter-list end -->
-                                </div>
-                                <div class="toolbar-amount">
-                                    <span>Showing 1 to 9 of 15</span>
-                                </div>
-                            </div>
-                            <!-- product-select-box start -->
-                            <div class="product-select-box">
-                                <div class="product-short">
-                                    <p>Sort By:</p>
-                                    <select class="nice-select">
-                                        <option value="trending">Relevance</option>
-                                        <option value="sales">Name (A - Z)</option>
-                                        <option value="sales">Name (Z - A)</option>
-                                        <option value="rating">Price (Low &gt; High)</option>
-                                        <option value="date">Rating (Lowest)</option>
-                                        <option value="price-asc">Model (A - Z)</option>
-                                        <option value="price-asc">Model (Z - A)</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- product-select-box end -->
-                        </div>
-                        <!-- shop-top-bar end -->
+
 
                         <main role="main">
                             @RenderBody()
@@ -576,30 +527,7 @@
                 <div class="container">
                     <div class="footer-logo-wrap pt-50 pb-35">
                         <div class="row">
-                            <!-- Begin Footer Logo Area -->
-                            <div class="col-lg-4 col-md-6">
-                                <div class="footer-logo">
-                                    <img src="~/images/menu/logo/1.jpg" alt="Footer Logo">
-                                    <p class="info">
-                                        We are a team of designers and developers that create high quality HTML Template & Woocommerce, Shopify Theme.
-                                    </p>
-                                </div>
-                                <ul class="des">
-                                    <li>
-                                        <span>Address: </span>
-                                        6688Princess Road, London, Greater London BAS 23JK, UK
-                                    </li>
-                                    <li>
-                                        <span>Phone: </span>
-                                        <a href="#">(+123) 123 321 345</a>
-                                    </li>
-                                    <li>
-                                        <span>Email: </span>
-                                        <a href="mailto://info@yourdomain.com">info@yourdomain.com</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- Footer Logo Area End Here -->
+
                             <!-- Begin Footer Block Area -->
                             <div class="col-lg-2 col-md-3 col-sm-6">
                                 <div class="footer-block">
@@ -847,8 +775,6 @@
         <!-- Quick View | Modal Area End Here -->
     </div>
     <!-- Body Wrapper End Here -->
-    <!-- jQuery-V1.12.4 -->
-    <script src="~/js/vendor/jquery-1.12.4.min.js"></script>
     <!-- Popper js -->
     <script src="~/js/vendor/popper.min.js"></script>
     <!-- Bootstrap V4.1.3 Fremwork js -->
@@ -863,8 +789,7 @@
     <script src="~/js/slick.min.js"></script>
     <!-- Owl Carousel-2 js -->
     <script src="~/js/owl.carousel.min.js"></script>
-    <!-- Magnific popup js -->
-    <script src="~/js/jquery.magnific-popup.min.js"></script>
+
     <!-- Isotope js -->
     <script src="~/js/isotope.pkgd.min.js"></script>
     <!-- Imagesloaded js -->
@@ -880,7 +805,7 @@
     <!-- Barrating -->
     <script src="~/js/jquery.barrating.min.js"></script>
     <!-- Jquery-ui -->
-    <script src="~/js/jquery-ui.min.js"></script>
+    <!--<script src="~/js/jquery-ui.min.js"></script>-->
     <!-- Venobox -->
     <script src="~/js/venobox.min.js"></script>
     <!-- Nice Select js -->
